@@ -26,7 +26,7 @@ if __name__ == "__main__":
     TOTAL, DIFF, N = 0, 0, 0
 
     while T > TOTAL:
-        diff = (X * 2**(N+1)) - (X * 2**N)
+        DIFF = (X * 2**(N+1)) - (X * 2**N)
         TOTAL += DIFF
         N += 1
 
