@@ -4,7 +4,7 @@ Logan wants to go to the movies with Lily on some day x satisfying, i<= x <=j bu
 Given i, j and k find the number of beautiful days in the inclusive range.
 Do not worry about the boundary conditions.
 
-print the count of days as output.
+Print the count of days as output.
 """
 
 if __name__ == "__main__":
