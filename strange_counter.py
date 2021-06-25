@@ -21,13 +21,13 @@ Given a time t, find and print the value displayed by the counter at time t.
 """
 
 if __name__ == "__main__":
-    T = int(input().strip())
-    X = 3
-    TOTAL, DIFF, N = 0, 0, 0
+	T = int(input().strip())
+	X = 3
+	TOTAL, DIFF, N = 0, 0, 0
 
-    while T > TOTAL:
-        DIFF = (X * 2**(N+1)) - (X * 2**N)
-        TOTAL += DIFF
-        N += 1
+	while T > TOTAL:
+		DIFF = (X * 2**(N+1)) - (X * 2**N)
+		TOTAL += DIFF
+		N += 1
 
-    print(TOTAL - T + 1)
+	print(TOTAL - T + 1)
