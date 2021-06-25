@@ -17,19 +17,19 @@ On the second line, print the number of 2-person teams that can know the maximum
 """
 
 if __name__ == "__main__":
-    N, M = list(map(int, input().strip().split()))
-    T = [int(input(), 2) for _ in range(N)]
+	N, M = list(map(int, input().strip().split()))
+	T = [int(input(), 2) for _ in range(N)]
 
-    max_topics, num_teams = 0, 0
+	max_topics, num_teams = 0, 0
 
-    for i in range(len(T) - 1):
-        for j in range(i + 1, len(T)):
-            topics = bin(T[i] | T[j]).count("1")
+	for i in range(len(T) - 1):
+		for j in range(i + 1, len(T)):
+			topics = bin(T[i] | T[j]).count("1")
 
-            if(topics == max_topics):
-                num_teams += 1
-            if(topics > max_topics):
-                max_topics = topics
-                num_teams = 1
+			if(topics == max_topics):
+				num_teams += 1
+			if(topics > max_topics):
+				max_topics = topics
+				num_teams = 1
 
-    print(max_topics, num_teams)
+	print(max_topics, num_teams)
