@@ -8,17 +8,17 @@ Ex: (())() is balanced
 """
 
 if __name__ == "__main__":
-    STRING = input().strip()
-    SYMBOL = list(STRING)
-    lcount, rcount = 0, 0
+	STRING = input().strip()
+	SYMBOL = list(STRING)
+	count = 0
 
-    for sym in SYMBOL:
-        if sym == "(":
-            lcount += 1
-        else:
-            rcount += 1
+	for sym in SYMBOL:
+		if sym == "(":
+			count += 1
+		else:
+			count -= 1
 
-    if lcount != rcount:
-        print("Unbalanced")
-    else:
-        print("Balanced")
+	if count == 0:
+		print("Balanced")
+	else:
+		print("Un-balanced")
