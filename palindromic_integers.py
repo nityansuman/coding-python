@@ -11,10 +11,10 @@ Print True if all the conditions of the problem statement are satisfied. Otherwi
 """
 
 if __name__ == "__main__":
-    N = int(input().strip())
-    NUMBER = input().strip().split(" ")
+	N = int(input().strip())
+	NUMBER = input().strip().split(" ")
 
-    if all(int(x) >= 0 for x in NUMBER) and any(x == x[::-1] for x in NUMBER):
-        print(True)
-    else:
-        print(False)
+	if all(int(x) >= 0 for x in NUMBER) and any(x == x[::-1] for x in NUMBER):
+		print(True)
+	else:
+		print(False)
