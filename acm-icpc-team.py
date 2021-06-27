@@ -27,18 +27,20 @@ def acmTeam(topic):
 
 
 if __name__ == "__main__":
-	# Read input from file
+	# Open file to write output
 	fptr = open(os.environ["OUTPUT_PATH"], "w")
 
-	# Process input
+	# Read input from stdin
 	first_multiple_input = input().rstrip().split()
+
+	# Process read input
 	n = int(first_multiple_input[0])
 	m = int(first_multiple_input[1])
 
 	# Collection placeholder
 	topic = list()
 
-	# Read input from stdin
+	# Read topic input from stdin
 	for _ in range(n):
 		topic_item = input()
 		topic.append(topic_item)
@@ -46,7 +48,7 @@ if __name__ == "__main__":
 	# Execute method to get results
 	result = acmTeam(topic)
 
-	# Write to file
+	# Write output to file
 	fptr.write('\n'.join(map(str, result)))
 	fptr.write('\n')
 
