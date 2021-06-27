@@ -14,13 +14,12 @@ def angryProfessor(k, a):
 
 
 if __name__ == "__main__":
-	# Read input from file
+	# Open file to write output
 	fptr = open(os.environ["OUTPUT_PATH"], "w")
 
-	# Read number of test case input from stdin
+	# Read test cases input from stdin
 	t = int(input().strip())
 
-	# For each test case
 	for t_itr in range(t):
 		# Read input from stdin
 		first_multiple_input = input().rstrip().split()
@@ -33,7 +32,7 @@ if __name__ == "__main__":
 		# Execute method to get results
 		result = angryProfessor(k, a)
 
-		# Write to file
+		# Write output to file
 		fptr.write(result + "\n")
 
 	# Close file
