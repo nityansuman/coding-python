@@ -1,6 +1,10 @@
 # Import packages
 import os
 
+#
+# The function is expected to return an INTEGER_ARRAY.
+# The function accepts STRING_ARRAY topic as parameter.
+#
 
 def acmTeam(topic):
 	# Convert string to binary
@@ -39,7 +43,7 @@ if __name__ == "__main__":
 		topic_item = input()
 		topic.append(topic_item)
 
-	# Call method to get results
+	# Execute method to get results
 	result = acmTeam(topic)
 
 	# Write to file
