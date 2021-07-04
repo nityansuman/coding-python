@@ -12,9 +12,9 @@ Note:
 
 Ex:
 	abcde -> abcde
-	deabc -> abc
+	dabc -> abc
 	cdeah -> cde
-	ababc -> abc
+	ababdf -> abdf
 """
 
 def largest_inorder_span(str):
