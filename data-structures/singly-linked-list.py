@@ -120,37 +120,3 @@ def reverse(head):
 	# Note: Current would be none for last node
 	head = previous
 	return head
-
-
-
-# if __name__ == "__main__":
-# 	llist_count = int(input())
-# 	llist = SinglyLinkedList()
-
-# 	# Part 1: Insert at `Head`
-# 	for i in range(llist_count):
-# 		llist_item = int(input())
-# 		llist_head = insert_at_head(llist.head, llist_item)
-# 		llist.head = llist_head
-
-# 	# Part 2: Inser at `Tail`
-# 	for i in range(llist_count):
-# 		llist_item = int(input())
-# 		llist_head = insert_at_tail(llist.head, llist_item)
-# 		llist.head = llist_head
-
-# 	# Part 3: Insert at a position
-# 	for _ in range(llist_count):
-# 		llist_item = int(input())
-# 		llist.insert_node(llist_item)
-
-# 	data = int(input())
-# 	position = int(input())
-# 	llist_head = insert_at_position(llist.head, data, position)
-
-# 	# Part 4: Delete at a position
-# 	position = int(input())
-# 	llist1 = delete_at_position(llist.head, position)
-
-# 	# Part 5: Reverse a linked list
-# 	new_llist = reverse(llist.head)
