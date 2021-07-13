@@ -20,12 +20,12 @@ def binary_search(arr, search):
 	# Check in middle index
 	if arr[mid] == search:
 		return True
+
+	# Recursive call to either side of the array
+	if search <= arr[mid]:
+		return binary_search(arr[0:mid], search)
 	else:
-		# Recursive call to either side of the array
-		if search <= arr[mid]:
-			return binary_search(arr[0:mid], search)
-		else:
-			return binary_search(arr[mid:], search)
+		return binary_search(arr[mid:], search)
 
 
 # Test
