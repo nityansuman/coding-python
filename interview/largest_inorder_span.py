@@ -1,6 +1,4 @@
 """
-INTERVIEW QUESTION: OLA
-
 Given a seqeunce of characters (string) (all same case), find the largest in-order span.
 
 An in-order span is defined as set of characters in ASCII increasing order
