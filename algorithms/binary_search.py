@@ -12,10 +12,7 @@ def binary_search(arr, search):
 			return False
 
 	# Compute middle index
-	if len(arr) % 2 == 0:
-		mid = len(arr) // 2
-	else:
-		mid = len(arr) // 2
+	mid = len(arr) // 2
 
 	# Check in middle index
 	if arr[mid] == search:
@@ -23,7 +20,7 @@ def binary_search(arr, search):
 
 	# Recursive call to either side of the array
 	if search <= arr[mid]:
-		return binary_search(arr[0:mid], search)
+		return binary_search(arr[:mid], search)
 	else:
 		return binary_search(arr[mid:], search)
 
@@ -38,6 +35,6 @@ if __name__ == "__main__":
 
 	# Search in the array
 	for s in search:
-		print(f"Searching for {s} in [{arr}]:", end=" -> ")
+		print(f"Searching for {s} in {arr}:", end=" -> ")
 		flag = binary_search(arr, s)
 		print("Found:", flag)
