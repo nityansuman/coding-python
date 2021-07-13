@@ -1,6 +1,8 @@
 
 def linear_search(arr, search):
+	# Iterate over the array
 	for i in range(len(arr)):
+		# Check for search element
 		if arr[i] == search:
 			return True
 	return False
