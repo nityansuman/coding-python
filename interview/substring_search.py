@@ -1,5 +1,18 @@
 """
 Given a string and a pattern, write a program to find if the pattern is present in the string.
+
+Example:
+	string = "HelloWorld"
+	pattern = "World"
+	output = True
+
+	string = "Hellohello"
+	pattern = "hello"
+	output = True
+
+	string = "Hellohello"
+	pattern = "helo"
+	output = False
 """
 
 def exact_match(string, pattern, s_index, p_index):
