@@ -55,7 +55,7 @@ if __name__ == "__main__":
 
 	for t in range(tests):
 		# Read string input from stdin
-		str = input().strip()
+		string = input().strip()
 
 		# Get largest in-order span
-		print(largest_inorder_span(str))
+		print(largest_inorder_span(string))
