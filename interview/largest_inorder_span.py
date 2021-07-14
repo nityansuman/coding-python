@@ -8,7 +8,7 @@ Note:
 - In case of multiple string spans with same length print the first one.
 - Input sequence can have repeatition of characters.
 
-Ex:
+Example:
 	abcde -> abcde
 	dabc -> abc
 	cdeah -> cde
