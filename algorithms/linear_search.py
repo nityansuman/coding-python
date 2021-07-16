@@ -1,9 +1,9 @@
 
 def linear_search(arr, search):
 	# Iterate over the array
-	for i in enumerate(arr):
+	for _, ele in enumerate(arr):
 		# Check for search element
-		if arr[i] == search:
+		if ele == search:
 			return True
 	return False
 
