@@ -1,5 +1,5 @@
 
-def insertion_sort(arr):
+def insertion_sort(arr, ascending=True):
 	# Raise error if array is empty
 	if len(arr) == 0:
 		raise AssertionError("Empty array found.")
@@ -15,10 +15,15 @@ def insertion_sort(arr):
 
 		# Iterate backwards and create space
 		j = i-1
-		while j >= 0 and key < arr[j]:
-			arr[j+1] = arr[j]
-			j -= 1
 
+		if ascending:
+			while j >= 0 and key < arr[j]:
+				arr[j+1] = arr[j]
+				j -= 1
+		else:
+			while j >= 0 and key > arr[j]:
+				arr[j+1] = arr[j]
+				j -= 1
 		# Add key at appropriate place
 		arr[j+1] = key
 
@@ -31,7 +36,7 @@ if __name__ == "__main__":
 	arr = list(map(int, input().strip().split()))
 
 	# Compute method to perform insertion sort
-	sorted_arr = insertion_sort(arr)
+	sorted_arr = insertion_sort(arr, ascending=True)
 
 	# View sorted array
 	print("Sorted array:", sorted_arr)
