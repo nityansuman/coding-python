@@ -6,7 +6,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/nityansuman/coding-python)
 ![GitHub language count](https://img.shields.io/github/languages/count/nityansuman/coding-python)
 
-From competitive coding puzzels, data structures to algorithms: everything in Python.
+From competitive coding puzzles, data structures, algorithms to interview questions: everything in Python.
 
 ## Data Structures
 
