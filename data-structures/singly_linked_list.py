@@ -1,21 +1,38 @@
+from typing import Union
 
-# Node
-class SinglyLinkedListNode:
-	def __init__(self, node_data):
+
+class Node:
+	"""Node implementation for linked list.
+
+	Each node has two components:
+		`data`: Value component
+		`next`: Link component
+	"""
+
+	def __init__(self, node_data: Union[int, float, str]) -> None:
+		"""Constructor.
+
+		Args:
+			node_data (Union[int, float, str]): Value to be assigned to the node.
+		"""
 		self.data = node_data
 		self.next = None
 
 
-# Linked list
 class SinglyLinkedList:
-	def __init__(self):
+	"""Single linked list implementation with head pointer.
+	"""
+
+	def __init__(self) -> None:
+		"""Constructor.
+		"""
 		self.head = None
 
 
 # Complete the insert_at_head function below
 def insert_at_head(head, data):
 	# Create a new node
-	node = SinglyLinkedListNode(data)
+	node = Node(data)
 
 	if head is None:
 		# Empty linked list
@@ -33,7 +50,7 @@ def insert_at_head(head, data):
 # Complete the insert_at_tail function below
 def insert_at_tail(head, data):
 	# Create a new node
-	node = SinglyLinkedListNode(data)
+	node = Node(data)
 
 	last = head
 
@@ -54,7 +71,7 @@ def insert_at_tail(head, data):
 # Complete the insert_at_position function below
 def insert_at_position(head, data, position):
 	# Create a new node
-	node = SinglyLinkedListNode(data)
+	node = Node(data)
 
 	if head is None:
 		# Empty linked list
