@@ -15,14 +15,14 @@ Example:
 	ababdf -> abdf
 """
 
-def largest_inorder_span(str):
+def largest_inorder_span(string):
 	# Set variables
 	prev_char = None
 	span_index, global_span_index = list(), list()
 
-	for c in str:
+	for c in string:
 		# Get character index
-		index = str.index(c)
+		index = string.index(c)
 
 		if prev_char is None:
 			# Set first character index
@@ -46,7 +46,7 @@ def largest_inorder_span(str):
 		global_span_index = span_index
 
 	# Construct in-order string
-	return "".join([str[i] for i in global_span_index])
+	return "".join([string[i] for i in global_span_index])
 
 
 if __name__ == "__main__":
