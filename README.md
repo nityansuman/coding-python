@@ -14,7 +14,6 @@ From competitive coding puzzles, data structures, algorithms to interview questi
 - [Stack with Linked List Implementation](data-structures/stack.py)
 - [Stack with Dynamic Array Implementation](data-structures/stack.py)
 
-
 ## Algorithms
 
 ### Searching
