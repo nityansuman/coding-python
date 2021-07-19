@@ -28,7 +28,12 @@ class SinglyLinkedList:
 		"""
 		self.head = None
 
-	def insert_at_head(self, data):
+	def insert_at_head(self, data: Union[int, float, str]) -> None:
+		"""Method to insert element at head.
+
+		Args:
+			data (Union[int, float, str]): Data to be added to linked list at head.
+		"""
 		# Create a new node
 		node = Node(data)
 
@@ -42,9 +47,13 @@ class SinglyLinkedList:
 
 		# Make node self.head
 		self.head = node
-		return self.head
 
-	def insert_at_tail(self, data):
+	def insert_at_tail(self, data: Union[int, float, str]) -> None:
+		"""Method to insert element at tail.
+
+		Args:
+			data (Union[int, float, str]): Data to be added to linked list at tail.
+		"""
 		# Create a new node
 		node = Node(data)
 
@@ -61,41 +70,55 @@ class SinglyLinkedList:
 
 		# Add node
 		last.next = node
-		return self.head
 
-	def insert_at_position(self, data, position):
+	def insert_at_position(self, data: Union[int, float, str], position: int) -> None:
+		"""Method to insert data at a position.
+
+		Args:
+			data (Union[int, float, str]): Data to be added to linked list.
+			position (int): Position at which data (node) is to be inserted.
+		"""
 		# Create a new node
 		node = Node(data)
 
 		if self.head is None:
 			# Empty linked list
 			self.head = node
-			return self.head
+			return True
+
+		temp_head = self.head
+
+		if position == 0:
+			node.next = temp_head
+			self.head = node
+			return True
 
 		start = 0
-		tail = self.head
-
 		# Iterate to desired position
 		while start != position-1:
 			start += 1
-			tail = tail.next
+			temp_head = temp_head.next
 
 		# Add link to next node
-		node.next = tail.next
+		node.next = temp_head.next
 
 		# Link current node to new node
-		tail.next = node
-		return self.head
+		temp_head.next = node
 
-	def delete_at_position(self, position):
+	def delete_at_position(self, position: int) -> None:
+		"""Method to remove data (node) at a position.
+
+		Args:
+			position (int): Position at which data (node) is to be deleted.
+		"""
 		if not self.head:
 			# Empty linked list
-			return self.head
+			raise Exception("Empty LinkedList, Cannot delete.")
 
 		if position == 0:
 			# Delete at first position
 			self.head = self.head.next
-			return self.head
+			return True
 
 		# Iterate to any position starting 1
 		tail = self.head
@@ -106,9 +129,10 @@ class SinglyLinkedList:
 
 		# Now delete
 		tail.next = tail.next.next
-		return self.head
 
 	def reverse(self):
+		"""Method to reverse the linked list.
+		"""
 		previous = None
 		current = self.head
 
@@ -123,10 +147,7 @@ class SinglyLinkedList:
 			previous = current
 			current = next_node
 
-			# Note: At end of each loop we have previous, current and next node
-		# Note: Current would be none for last node
 		self.head = previous
-		return self.head
 
 	def __repr__(self) -> str:
 		"""Method that helps `print` the entire linked list.
@@ -166,7 +187,7 @@ if __name__ == "__main__":
 		linked_list.insert_at_head(element)
 
 	# View linked list elements
-	print("Linked List:", linked_list)
+	print("Updated Linked List:", linked_list)
 
 	# Read input from stdin to add at a position
 	arr = list(map(int, input("Element - Position (add at position):").strip().split()))
@@ -175,7 +196,13 @@ if __name__ == "__main__":
 	linked_list.insert_at_position(data=arr[0], position=arr[1])
 
 	# View linked list elements
-	print("Linked List:", linked_list)
+	print("Linked List after additon:", linked_list)
+
+	# Add element at a position
+	linked_list.delete_at_position(position=arr[1])
+
+	# View linked list elements
+	print("Linked List after deletion:", linked_list)
 
 	# Revers linked list
 	linked_list.reverse()
