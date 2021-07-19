@@ -10,9 +10,19 @@ From competitive coding puzzles, data structures, algorithms to interview questi
 
 ## Data Structures
 
+### Linked List
+
 - [Singly Linked List Implementation](data-structures/singly_linked_list.py)
-- [Stack with Linked List Implementation](data-structures/stack.py#L34)
-- [Stack with Dynamic Array Implementation](data-structures/stack.py#L125)
+
+### Stack
+
+- [Stack using Dynamic Array Implementation](data-structures/stack.py#L125)
+- [Stack using Linked List Implementation](data-structures/stack.py#L34)
+
+### Queue
+
+- [Queue using Dynamic Array Implementation](data-structures/queue.py#L5)
+- [Queue using Linked List Implementation](data-structures/queue.py)
 
 ## Algorithms
 
