@@ -27,26 +27,18 @@ class SinglyLinkedList:
 		"""Constructor.
 		"""
 		self.head = None
+		self.size = 0
 
 	def insert_at_head(self, data: Union[int, float, str]) -> None:
-		"""Method to insert element at head.
+		"""Method to insert element at the begining of the linked list.
 
 		Args:
 			data (Union[int, float, str]): Data to be added to linked list at head.
 		"""
-		# Create a new node
 		node = Node(data)
-
-		if self.head is None:
-			# Empty linked list
-			self.head = node
-			return self.head
-
-		# Link node to self.head
 		node.next = self.head
-
-		# Make node self.head
 		self.head = node
+		self.size += 1
 
 	def insert_at_tail(self, data: Union[int, float, str]) -> None:
 		"""Method to insert element at tail.
@@ -54,22 +46,20 @@ class SinglyLinkedList:
 		Args:
 			data (Union[int, float, str]): Data to be added to linked list at tail.
 		"""
-		# Create a new node
 		node = Node(data)
 
-		last = self.head
-
 		if self.head is None:
-			# Empty linked list
+			node.next = self.head
 			self.head = node
-			return self.head
+			self.size += 1
+			return
 
-		# Iterate to last node
-		while last.next:
-			last = last.next
+		cur = self.head
+		while cur.next is not None:
+			cur = cur.next
 
-		# Add node
-		last.next = node
+		cur.next = node
+		self.size += 1
 
 	def insert_at_position(self, data: Union[int, float, str], position: int) -> None:
 		"""Method to insert data at a position.
@@ -77,33 +67,30 @@ class SinglyLinkedList:
 		Args:
 			data (Union[int, float, str]): Data to be added to linked list.
 			position (int): Position at which data (node) is to be inserted.
+				Position value here starts from 0.
 		"""
-		# Create a new node
+		if self.is_empty():
+			raise Exception("Found empty `SinglyLinkedList`.")
+
+		if self.get_size() < position or position < 0:
+			raise Exception("Incorrect position.")
+
 		node = Node(data)
 
-		if self.head is None:
-			# Empty linked list
-			self.head = node
-			return True
-
-		temp_head = self.head
-
 		if position == 0:
-			node.next = temp_head
+			node.next = self.head
 			self.head = node
-			return True
+			self.size += 1
+			return
 
-		start = 0
-		# Iterate to desired position
-		while start != position-1:
-			start += 1
-			temp_head = temp_head.next
+		cur = self.head
+		count = 0
+		while count != position-1:
+			cur = cur.next
+			count += 1
 
-		# Add link to next node
-		node.next = temp_head.next
-
-		# Link current node to new node
-		temp_head.next = node
+		node.next = cur.next
+		cur.next = node
 
 	def delete_at_position(self, position: int) -> None:
 		"""Method to remove data (node) at a position.
@@ -111,43 +98,57 @@ class SinglyLinkedList:
 		Args:
 			position (int): Position at which data (node) is to be deleted.
 		"""
-		if not self.head:
-			# Empty linked list
-			raise Exception("Empty LinkedList, Cannot delete.")
+		if self.is_empty():
+			raise Exception("Found empty `SinglyLinkedList`.")
+
+		if self.get_size() < position or position < 0:
+			raise Exception("Incorrect position.")
 
 		if position == 0:
-			# Delete at first position
 			self.head = self.head.next
-			return True
+			self.size -= 1
+			return
 
-		# Iterate to any position starting 1
-		tail = self.head
-		start = 0
-		while start != position-1:
-			start += 1
-			tail = tail.next
+		cur = self.head
+		count = 0
+		while count != position-1:
+			cur = cur.next
+			count += 1
 
-		# Now delete
-		tail.next = tail.next.next
+		cur.next = cur.next.next
 
 	def reverse(self):
 		"""Method to reverse the linked list.
 		"""
-		previous = None
-		current = self.head
+		if self.is_empty():
+			raise Exception("Found empty `SinglyLinkedList`.")
 
-		while current is not None:
-			# Point to the next node
-			next_node = current.next
+		prev = None
+		cur = self.head
 
-			# Change pointer
-			current.next = previous
+		while cur is not None:
+			next_node = cur.next
+			cur.next = prev
+			prev = cur
+			cur = next_node
 
-			# Rename nodes
-			previous = current
-			current = next_node
+		self.head = prev
 
-		self.head = previous
+	def is_empty(self) -> bool:
+		"""Method to find if the instance of `SinglyLinkedList` is empty or not.
+
+		Returns:
+			bool: True if empty else False.
+		"""
+		return self.size == 0
+
+	def get_size(self) -> int:
+		"""Method to get the size of the linked list.
+
+		Returns:
+			int: Integer denoting the size of the linked list.
+		"""
+		return self.size
 
 	def __repr__(self) -> str:
 		"""Method that helps `print` the entire linked list.
@@ -155,13 +156,13 @@ class SinglyLinkedList:
 		Returns:
 			str: String representation of the linked list elements.
 		"""
-		values = list()
-		btm = self.head
+		output = ""
+		cur = self.head
 
-		while btm is not None:
-			values.append(str(btm.data))
-			btm = btm.next
-		return " -> ".join(values)
+		while cur is not None:
+			output += str(cur.data) + " -> "
+			cur = cur.next
+		return output[:-3]
 
 
 # Test
