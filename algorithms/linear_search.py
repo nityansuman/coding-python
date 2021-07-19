@@ -1,3 +1,5 @@
+"""Linear search implementation.
+"""
 
 def linear_search(arr, search):
 	# Iterate over the array
