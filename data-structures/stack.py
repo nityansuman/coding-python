@@ -167,6 +167,7 @@ class DynamicArrayStack:
 		return ", ".join([str(ele) for ele in self.stack])
 
 
+# Test
 if __name__ == "__main__":
 	# Read inputs from stdin
 	arr = list(map(int, input().strip().split()))
