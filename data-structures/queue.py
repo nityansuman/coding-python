@@ -7,6 +7,8 @@ class DynamicArrayQueue:
 	"""
 
 	def __init__(self) -> None:
+		"""Constructor.
+		"""
 		self.queue = list()
 
 	def enqueue(self, value: Union[int, float, str]) -> None:
