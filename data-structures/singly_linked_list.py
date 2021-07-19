@@ -20,7 +20,7 @@ class Node:
 
 
 class SinglyLinkedList:
-	"""Single linked list implementation with head pointer.
+	"""Single linked list implementation with self.head pointer.
 	"""
 
 	def __init__(self) -> None:
@@ -28,112 +28,157 @@ class SinglyLinkedList:
 		"""
 		self.head = None
 
+	def insert_at_head(self, data):
+		# Create a new node
+		node = Node(data)
 
-# Complete the insert_at_head function below
-def insert_at_head(head, data):
-	# Create a new node
-	node = Node(data)
+		if self.head is None:
+			# Empty linked list
+			self.head = node
+			return self.head
 
-	if head is None:
-		# Empty linked list
-		head = node
-		return head
+		# Link node to self.head
+		node.next = self.head
 
-	# Link node to head
-	node.next = head
+		# Make node self.head
+		self.head = node
+		return self.head
 
-	# Make node head
-	head = node
-	return head
+	def insert_at_tail(self, data):
+		# Create a new node
+		node = Node(data)
+
+		last = self.head
+
+		if self.head is None:
+			# Empty linked list
+			self.head = node
+			return self.head
+
+		# Iterate to last node
+		while last.next:
+			last = last.next
+
+		# Add node
+		last.next = node
+		return self.head
+
+	def insert_at_position(self, data, position):
+		# Create a new node
+		node = Node(data)
+
+		if self.head is None:
+			# Empty linked list
+			self.head = node
+			return self.head
+
+		start = 0
+		tail = self.head
+
+		# Iterate to desired position
+		while start != position-1:
+			start += 1
+			tail = tail.next
+
+		# Add link to next node
+		node.next = tail.next
+
+		# Link current node to new node
+		tail.next = node
+		return self.head
+
+	def delete_at_position(self, position):
+		if not self.head:
+			# Empty linked list
+			return self.head
+
+		if position == 0:
+			# Delete at first position
+			self.head = self.head.next
+			return self.head
+
+		# Iterate to any position starting 1
+		tail = self.head
+		start = 0
+		while start != position-1:
+			start += 1
+			tail = tail.next
+
+		# Now delete
+		tail.next = tail.next.next
+		return self.head
+
+	def reverse(self):
+		previous = None
+		current = self.head
+
+		while current is not None:
+			# Point to the next node
+			next_node = current.next
+
+			# Change pointer
+			current.next = previous
+
+			# Rename nodes
+			previous = current
+			current = next_node
+
+			# Note: At end of each loop we have previous, current and next node
+		# Note: Current would be none for last node
+		self.head = previous
+		return self.head
+
+	def __repr__(self) -> str:
+		"""Method that helps `print` the entire linked list.
+
+		Returns:
+			str: String representation of the linked list elements.
+		"""
+		values = list()
+		btm = self.head
+
+		while btm is not None:
+			values.append(str(btm.data))
+			btm = btm.next
+		return " -> ".join(values)
 
 
-# Complete the insert_at_tail function below
-def insert_at_tail(head, data):
-	# Create a new node
-	node = Node(data)
+# Test
+if __name__ == "__main__":
+	# Read inputs from stdin
+	arr = list(map(int, input("Elements (add at tail):").strip().split()))
 
-	last = head
+	# Create a linked list
+	linked_list = SinglyLinkedList()
 
-	if head is None:
-		# Empty linked list
-		head = node
-		return head
+	# Add elements to the list
+	for element in arr:
+		linked_list.insert_at_tail(element)
 
-	# Iterate to last node
-	while last.next:
-		last = last.next
+	# View linked list elements
+	print("Linked List:", linked_list)
 
-	# Add node
-	last.next = node
-	return head
+	# Read another set of inputs from stdin
+	arr = list(map(int, input("Elements (add at head):").strip().split()))
 
+	# Add elements to the list
+	for element in arr:
+		linked_list.insert_at_head(element)
 
-# Complete the insert_at_position function below
-def insert_at_position(head, data, position):
-	# Create a new node
-	node = Node(data)
+	# View linked list elements
+	print("Linked List:", linked_list)
 
-	if head is None:
-		# Empty linked list
-		head = node
-		return head
+	# Read input from stdin to add at a position
+	arr = list(map(int, input("Element - Position (add at position):").strip().split()))
 
-	start = 0
-	tail = head
+	# Add element at a position
+	linked_list.insert_at_position(data=arr[0], position=arr[1])
 
-	# Iterate to desired position
-	while start != position-1:
-		start += 1
-		tail = tail.next
+	# View linked list elements
+	print("Linked List:", linked_list)
 
-	# Add link to next node
-	node.next = tail.next
+	# Revers linked list
+	linked_list.reverse()
 
-	# Link current node to new node
-	tail.next = node
-	return head
-
-
-# Complete the 'delete_at_position' function below
-def delete_at_position(head, position):
-	if not head:
-		# Empty linked list
-		return head
-
-	if position == 0:
-		# Delete at first position
-		head = head.next
-		return head
-
-	# Iterate to any position starting 1
-	tail = head
-	start = 0
-	while start != position-1:
-		start += 1
-		tail = tail.next
-
-	# Now delete
-	tail.next = tail.next.next
-	return head
-
-
-# Complete the 'reverse' function below
-def reverse(head):
-	previous = None
-	current = head
-
-	while current is not None:
-		# Point to the next node
-		next_node = current.next
-
-		# Change pointer
-		current.next = previous
-
-		# Rename nodes
-		previous = current
-		current = next_node
-
-		# Note: At end of each loop we have previous, current and next node
-	# Note: Current would be none for last node
-	head = previous
-	return head
+	# View linked list elements
+	print("Reversed Linked List:", linked_list)
