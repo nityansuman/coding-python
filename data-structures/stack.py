@@ -127,6 +127,8 @@ class DynamicArrayStack:
 	"""
 
 	def __init__(self) -> None:
+		"""Constructor.
+		"""
 		self.stack = list()
 
 	def push(self, value: Union[int, float, str]) -> None:
