@@ -1,43 +1,43 @@
+def utopian_tree(n: int) -> int:
+    """Method to compute height of the utopian tree after `n` cycles of growth.
 
-def utopian_tree(n):
-	# Set initial height of the tree
-	# Set counter
-	height, counter = 1, 0
+	Utopian tree doubles it's height every summer and grows by 1 unit every spring
+	i.e., every year the tree goes through two cycles of growth.
 
-	if n == 0:
-		return height
+    Args:
+		n (int): Number of growth cycles.
 
-	while n > 0:
-		if counter == 0:
-			# Update height
-			height = 2 * height
+    Returns:
+		int: Height of the tree after `n` cycles.
+    """
+    height = 1 # Initial height of the tree
+    is_summer = True # First season as `summer`
 
-			# Set environment
-			counter += 1
-			n -= 1
-		if counter == 1 and n > 0:
-			# Update height
-			height += 1
+    if n == 0:
+        return height
 
-			# Set environment
-			counter = 0
-			n -= 1
+    while n > 0:
+        if is_summer:
+            height *= 2
+            is_summer = False
+            n -= 1
+        if not is_summer and n > 0:
+            height += 1
+            is_summer = True
+            n -= 1
 
-	# At the end of the cycle return update height
-	return height
+    return height
 
 
 if __name__ == "__main__":
-	# Read integer input denoting test cases from stdin
-	t = int(input().strip())
+    # Read integer input denoting test cases from stdin
+    t = int(input().strip())
 
-	# For each test case
-	for x in range(t):
+    # For each test case
+    for x in range(t):
 
-		# Read integer input denoting cycles from stdin
-		n = int(input().strip())
+        # Read integer input denoting cycles from stdin
+        n = int(input().strip())
 
-		# Compute uotpian tree height after n cycles
-		height = utopian_tree(n)
-
-		print(height)
+        # Compute utopian tree height after n cycles
+        print("Height of the `Utopian` tree:", utopian_tree(n))
