@@ -15,6 +15,7 @@ Example:
 	ababdf -> abdf
 """
 
+
 def largest_inorder_span(string):
 	# Set variables
 	prev_char = None

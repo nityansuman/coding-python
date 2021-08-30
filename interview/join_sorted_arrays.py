@@ -16,6 +16,7 @@ Example:
 	Merged array = [6, 5, 4, 3, 2, 1]
 """
 
+
 def join_sorted_arrays(arr1, arr2, asc):
 	# Compute length of arrays
 	len1, len2 = len(arr1), len(arr2)
@@ -61,6 +62,7 @@ def join_sorted_arrays(arr1, arr2, asc):
 		arr.extend(arr2[idx2:])
 
 	return arr
+
 
 # Test
 if __name__ == "__main__":

@@ -15,6 +15,7 @@ Example:
 	output = False
 """
 
+
 def exact_match(string, pattern, s_index, p_index):
 	# Check if we have reached end of pattern
 	if p_index == len(pattern):
