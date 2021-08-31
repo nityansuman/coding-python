@@ -165,7 +165,6 @@ class SinglyLinkedList:
 		return output[:-3]
 
 
-# Test
 if __name__ == "__main__":
 	# Read inputs from stdin
 	arr = list(map(int, input("Elements (add at tail):").strip().split()))
@@ -191,7 +190,8 @@ if __name__ == "__main__":
 	print("Updated Linked List:", linked_list)
 
 	# Read input from stdin to add at a position
-	arr = list(map(int, input("Element - Position (add at position):").strip().split()))
+	arr = list(
+		map(int, input("Element - Position (add at position):").strip().split()))
 
 	# Add element at a position
 	linked_list.insert_at_position(data=arr[0], position=arr[1])

@@ -43,7 +43,6 @@ class DynamicArrayQueue:
 		return ", ".join([str(ele) for ele in self.queue])
 
 
-# Test
 if __name__ == "__main__":
 	# Read inputs from stdin
 	arr = list(map(int, input().strip().split()))
