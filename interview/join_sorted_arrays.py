@@ -64,7 +64,6 @@ def join_sorted_arrays(arr1, arr2, asc):
 	return arr
 
 
-# Test
 if __name__ == "__main__":
 	# Read integer arrays from stdin
 	a1 = list(map(int, input().strip().split()))

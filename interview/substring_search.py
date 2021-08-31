@@ -50,9 +50,8 @@ def substring_search(string, pattern, s_index, p_index):
 	return substring_search(string, pattern, s_index+1, p_index)
 
 
-# Test
 if __name__ == "__main__":
-	# Read a string from stdin
+	# Read string from stdin
 	string = input().strip()
 
 	# Read search string from stdin
