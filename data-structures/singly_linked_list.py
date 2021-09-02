@@ -1,3 +1,6 @@
+# Singly Linked List Implementation
+
+# Import packages
 from typing import Union
 
 
@@ -20,49 +23,62 @@ class Node:
 
 
 class SinglyLinkedList:
-	"""Single linked list implementation with self.head pointer.
+	"""Singly linked list class implementation.
 	"""
 
 	def __init__(self) -> None:
 		"""Constructor.
 		"""
 		self.head = None
-		self.size = 0
+		self._size = 0
 
 	def insert_at_head(self, data: Union[int, float, str]) -> None:
-		"""Method to insert element at the begining of the linked list.
+		"""Method to insert element at the head (begining) of the linked list.
 
 		Args:
 			data (Union[int, float, str]): Data to be added to linked list at head.
 		"""
+		# Create a node
 		node = Node(data)
+
+		# Add node at head
 		node.next = self.head
 		self.head = node
-		self.size += 1
+
+		# Increament size attribute of the linked list
+		self._size += 1
 
 	def insert_at_tail(self, data: Union[int, float, str]) -> None:
-		"""Method to insert element at tail.
+		"""Method to insert element at tail of the linked list.
 
 		Args:
 			data (Union[int, float, str]): Data to be added to linked list at tail.
 		"""
+		# Create a node
 		node = Node(data)
 
 		if self.head is None:
+			# Add node at head if empty linked list
 			node.next = self.head
 			self.head = node
-			self.size += 1
+
+			# Increament size attribute of the linked list
+			self._size += 1
 			return
 
+		# Iterate to the last node
 		cur = self.head
 		while cur.next is not None:
 			cur = cur.next
 
+		# Add node at tail
 		cur.next = node
-		self.size += 1
+
+		# Increament size attribute of the linked list
+		self._size += 1
 
 	def insert_at_position(self, data: Union[int, float, str], position: int) -> None:
-		"""Method to insert data at a position.
+		"""Method to insert data at a specific position in the linked list.
 
 		Args:
 			data (Union[int, float, str]): Data to be added to linked list.
@@ -75,22 +91,33 @@ class SinglyLinkedList:
 		if self.get_size() < position or position < 0:
 			raise Exception("Incorrect position.")
 
+		# Create a node
 		node = Node(data)
 
+		# Add node at head
 		if position == 0:
+			# Add node
 			node.next = self.head
 			self.head = node
-			self.size += 1
+
+			# Increament size attribute of the linked list
+			self._size += 1
 			return
 
+		# Iterate to node before the specified position
 		cur = self.head
 		count = 0
 		while count != position-1:
 			cur = cur.next
 			count += 1
 
+		# Add node at next position
 		node.next = cur.next
 		cur.next = node
+
+		# Increament size attribute of the linked list
+		self._size += 1
+
 
 	def delete_at_position(self, position: int) -> None:
 		"""Method to remove data (node) at a position.
@@ -104,18 +131,24 @@ class SinglyLinkedList:
 		if self.get_size() < position or position < 0:
 			raise Exception("Incorrect position.")
 
+		# Delete node at head
 		if position == 0:
 			self.head = self.head.next
-			self.size -= 1
+			self._size -= 1
 			return
 
+		# Iterate to node before the specified position
 		cur = self.head
 		count = 0
 		while count != position-1:
 			cur = cur.next
 			count += 1
 
+		# Delete node
 		cur.next = cur.next.next
+
+		# Increament size attribute of the linked list
+		self._size -= 1
 
 	def reverse(self):
 		"""Method to reverse the linked list.
@@ -123,15 +156,18 @@ class SinglyLinkedList:
 		if self.is_empty():
 			raise Exception("Found empty `SinglyLinkedList`.")
 
+		# Set pointers
 		prev = None
 		cur = self.head
 
+		# Iterate to the end of the list and revser node links
 		while cur is not None:
 			next_node = cur.next
 			cur.next = prev
 			prev = cur
 			cur = next_node
 
+		# Set tail as new head
 		self.head = prev
 
 	def is_empty(self) -> bool:
@@ -140,7 +176,7 @@ class SinglyLinkedList:
 		Returns:
 			bool: True if empty else False.
 		"""
-		return self.size == 0
+		return self._size == 0
 
 	def get_size(self) -> int:
 		"""Method to get the size of the linked list.
@@ -148,7 +184,7 @@ class SinglyLinkedList:
 		Returns:
 			int: Integer denoting the size of the linked list.
 		"""
-		return self.size
+		return self._size
 
 	def __repr__(self) -> str:
 		"""Method that helps `print` the entire linked list.
