@@ -12,13 +12,13 @@ class Node:
 		`next`: Link component
 	"""
 
-	def __init__(self, node_data: Union[int, float, str]) -> None:
+	def __init__(self, data: Union[int, float, str]) -> None:
 		"""Constructor.
 
 		Args:
-			node_data (Union[int, float, str]): Value to be assigned to the node.
+			data (Union[int, float, str]): Value to be assigned to the node.
 		"""
-		self.data = node_data
+		self.data = data
 		self.next = None
 
 
