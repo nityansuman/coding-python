@@ -72,59 +72,9 @@ class LinkedListStack:
 		return ", ".join(values)
 
 
-class DynamicArrayStack:
-	"""Stack (last-in, first out) data structure implementation using dynamic arrays.
-	"""
-
-	def __init__(self) -> None:
-		"""Constructor.
-		"""
-		self.stack = list()
-
-	def push(self, value: Union[int, float, str]) -> None:
-		"""Method to push element in stack.
-
-		Args:
-			value (Union[int, float, str]): Value to be pushed into stack.
-		"""
-		self.append(value)
-
-	def pop(self) -> None:
-		"""Method to pop top element from the stack.
-		"""
-		self.pop()
-
-	def peek(self) -> Union[int, float, str]:
-		"""Method to peek (view top element) into stack.
-
-		Returns:
-			Union[int, float, str]: Top element of the stack.
-		"""
-		return self.stack[-1]
-
-	def size(self) -> int:
-		"""Method to get the size of the stack.
-
-		Returns:
-			int: Size of the stack.
-		"""
-		return len(self.stack)
-
-	def __repr__(self) -> str:
-		"""Method that helps `print` the entire stack.
-
-		Returns:
-			str: String representation of the stack elements.
-		"""
-		return ", ".join([str(ele) for ele in self.stack])
-
-
 if __name__ == "__main__":
 	# Read inputs from stdin
 	arr = list(map(int, input().strip().split()))
-
-	# Create a dynamic array based stack
-	# stack = DynamicArrayStack()
 
 	# Create a linked based stack
 	stack = LinkedListStack()
