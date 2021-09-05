@@ -10,29 +10,13 @@ From competitive coding puzzles, data structures, algorithms to interview questi
 
 ## Data Structures
 
-### Linked List
-
 - [Singly Linked List Implementation](data-structures/singly_linked_list.py)
-
-### Stack
-
-- [Stack using Dynamic Array Implementation](data-structures/stack.py#L125)
-- [Stack using Linked List Implementation](data-structures/stack.py#L34)
-
-### Queue
-
-- [Queue using Dynamic Array Implementation](data-structures/queue.py#L5)
-- [Queue using Linked List Implementation](data-structures/queue.py)
+- [Stack using Singly Linked List Implementation](data-structures/stack.py)
 
 ## Algorithms
 
-### Searching
-
 - [Linear Search](algorithms/linear_search.py)
 - [Binary Search](algorithms/binary_search.py)
-
-### Sorting
-
 - [Insertion Sort](algorithms/insertion_sort.py)
 
 ## Interview Questions
@@ -40,6 +24,7 @@ From competitive coding puzzles, data structures, algorithms to interview questi
 - [Substring Search](interview/substring_search.py)
 - [Largest Ordered Span](interview/largest_inorder_span.py)
 - [Join Sorted Arrays](interview/join_sorted_arrays.py)
+- [Two Sum](interview/two_sum.py)
 
 [![Forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 [![Forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
