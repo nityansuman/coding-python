@@ -1,17 +1,9 @@
-def utopian_tree(n: int) -> int:
-    """Method to compute height of the utopian tree after `n` cycles of growth.
+def utopian_tree(n):
+    # Initial height of the tree
+    height = 1
 
-	Utopian tree doubles it's height every summer and grows by 1 unit every spring
-	i.e., every year the tree goes through two cycles of growth.
-
-    Args:
-		n (int): Number of growth cycles.
-
-    Returns:
-		int: Height of the tree after `n` cycles.
-    """
-    height = 1 # Initial height of the tree
-    is_summer = True # First season as `summer`
+    # First season as summer
+    is_summer = True
 
     if n == 0:
         return height
