@@ -1,4 +1,3 @@
-
 def piling_up(num_blocks, block_lengths):
 	# Set dummy top value
 	top = -1
