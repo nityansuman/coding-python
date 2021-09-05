@@ -1,4 +1,3 @@
-
 def create_sequences(sequence, factor):
 	# Compute sequence and new sequence length
 	seq_len = len(sequence)
