@@ -10,32 +10,32 @@ Output: [[-2,2],[0,0],[-1,1]]
 """
 
 def two_sum(arr, target):
-    # Placeholder to store all identified pairs
-    mlist = list()
+	# Placeholder to store all identified pairs
+	mlist = list()
 
-    # Placeholder for mapping array elements
-    seen = dict()
+	# Placeholder for mapping array elements
+	seen = dict()
 
-    # Iterate over the array
-    for a in arr:
-        # If sum complement present
-        if target - a in seen:
-            mlist.append((seen[target - a], a))
+	# Iterate over the array
+	for a in arr:
+		# If sum complement present
+		if target - a in seen:
+			mlist.append((seen[target - a], a))
 
-        # Add current element to mapping
-        seen[a] = a
+		# Add current element to mapping
+		seen[a] = a
 
-    # Return itdentified pairs
-    return mlist
+	# Return itdentified pairs
+	return mlist
 
 
 if __name__ == "__main__":
-    # Read integer array from stdin
-    arr = list(map(int, input().strip().split()))
+	# Read integer array from stdin
+	arr = list(map(int, input().strip().split()))
 
-    # Read target sum from stdin
-    target = int(input().strip())
+	# Read target sum from stdin
+	target = int(input().strip())
 
-    # Identify appropriate pairs
-    result = two_sum(arr, target)
-    print(result)
+	# Identify appropriate pairs
+	result = two_sum(arr, target)
+	print(result)
