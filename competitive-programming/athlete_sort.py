@@ -1,4 +1,3 @@
-
 if __name__ == "__main__":
 	# Read number of rows and columns from stdin
 	rows, columns = list(map(int, input().strip().split()))

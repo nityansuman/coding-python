@@ -1,11 +1,4 @@
-
 def find_captains_room(rooms, size):
-    """Method to find the captain's room.
-
-    Args:
-        rooms (list): List of all rooms.
-        size (int): Size of the group.
-    """
     all_guests = list(map(int, rooms))
     unique_guests = set(all_guests)
     sum_all_guests = sum(all_guests)
