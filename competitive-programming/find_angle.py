@@ -17,4 +17,6 @@ if __name__ == "__main__":
 
 	# Compute angle at mbc
 	angle = compute_angle(ab, bc)
-	print(f"Computed Angle: {angle}{chr(176)}") # Show degree symbol
+
+	# Print angle with degree symbol
+	print(f"Computed Angle: {angle}{chr(176)}")
