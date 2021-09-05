@@ -3,7 +3,7 @@ def piling_up(num_blocks, block_lengths):
 	# Set dummy top value
 	top = -1
 
-	# Set both left and right pointers
+	# Set left and right pointers
 	left, right = 0, num_blocks - 1
 
 	# Set flag to denote first iteration
@@ -25,6 +25,7 @@ def piling_up(num_blocks, block_lengths):
 				if_first = False
 			else:
 				if block_lengths[left] <= top:
+					top = block_lengths[left]
 					left += 1
 				else:
 					# Reset piling up flag when rule failes and break
@@ -40,6 +41,7 @@ def piling_up(num_blocks, block_lengths):
 				if_first = False
 			else:
 				if block_lengths[right] <= top:
+					top = block_lengths[right]
 					left += 1
 				else:
 					# Reset piling up flag when rule failes and break
@@ -56,6 +58,7 @@ def piling_up(num_blocks, block_lengths):
 				if_first = False
 			else:
 				if block_lengths[left] <= top:
+					top = block_lengths[left]
 					left += 1
 					right -= 1
 				else:
