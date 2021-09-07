@@ -1,75 +1,111 @@
 # Import packages
-from typing import Union
-from singly_linked_list import Node
+from typing import Iterable, Union
 
 
-class LinkedListStack:
-	"""Stack (last-in, first out) data structure implementation using singly linked list.
+class Node:
+	"""Node construct.
+
+	Each node has two components:
+		`data`: Value.
+		`next`: Link to next node.
+	"""
+
+	def __init__(self, data: Union[int, float, str, Iterable]) -> None:
+		"""Node constructor.
+
+		Args:
+			data (Union[int, float, str, Iterable]): Value to be assigned to the node.
+		"""
+		self.data = data
+		self.next = None
+
+
+class Stack:
+	"""Stack (LIFO = Last In First Out) class implementation using singly linked list.
 	"""
 
 	def __init__(self) -> None:
 		"""Constructor.
 		"""
 		self.top = None
-		self.bottom = None
-		self.size = 0
 
-	def push(self, value: Union[int, float, str]) -> None:
-		"""Method to push element in stack.
+	def is_empty(self) -> bool:
+		"""Method to check if stack is empty.
+
+		Returns:
+			bool: Return True if empty else False.
+		"""
+		if self.top is None:
+			return True
+
+		return False
+
+	def push(self, value: Union[int, float, str, Iterable]) -> None:
+		"""Method to push element in the stack.
 
 		Args:
 			value (Union[int, float, str]): Value to be pushed into stack.
 		"""
-		node = Node(node_data=value)
+		# Create node
+		node = Node(data=value)
+
+		# Add node to top of stack
 		node.next = self.top
+
+		# Make current node as top
 		self.top = node
-		self.size += 1
 
 	def pop(self) -> None:
-		"""Method to pop top element from the stack.
-
-		Raises:
-			Exception: If stack is empty.
+		"""Method to pop out element from top of stack.
 		"""
-		if self.bottom.next is None:
-			self.top = None
-			self.bottom = None
+		# Check if stack is empty
+		if self.is_empty():
+			return None
 
-		btm = self.bottom
+		# Shift top element to next node
+		popped_node = self.top
+		self.top = self.top.next
 
-		while btm.next.next is not None:
-			btm = btm.next
+		# Remove link
+		popped_node.next = None
 
-		btm.next = None
-		self.top = btm
+		# Return popped element
+		return popped_node.data
 
-	def peek(self) -> Union[int, float, str]:
-		"""Method to peek (view top element) into stack.
-
-		Raises:
-			Exception: If stack is empty.
+	def peek(self) -> Union[int, float, str, Iterable]:
+		"""Method to view top element of the stack.
 
 		Returns:
-			Union[int, float, str]: Top element of the stack.
+			Union[int, float, str, Iterable]: Top element of the stack.
 		"""
-		if self.bottom is None:
-			raise Exception("Warning: Found empty stack.")
+		# Check if stack is empty
+		if self.is_empty():
+			return None
 
+		# If stack not empty, return top element
 		return self.top.data
 
 	def __repr__(self) -> str:
-		"""Method that helps `print` the entire stack.
+		"""Method to construct string representation of the entire stack.
+		This string representation is used by `print`.
 
 		Returns:
 			str: String representation of the stack elements.
 		"""
-		values = list()
-		btm = self.bottom
+		# Check if stack is empty
+		if self.is_empty():
+			return None
 
-		while btm is not None:
-			values.append(str(btm.data))
-			btm = btm.next
-		return ", ".join(values)
+		str_repr = "\n"
+		curr = self.top
+
+		# Iterate and create a string representation
+		while curr.next is not None:
+			str_repr += "|" + str(curr.data) + "|\n"
+			curr = curr.next
+
+		str_repr += "|" + str(curr.data) + "|"
+		return str_repr
 
 
 if __name__ == "__main__":
@@ -77,10 +113,13 @@ if __name__ == "__main__":
 	arr = list(map(int, input().strip().split()))
 
 	# Create a linked based stack
-	stack = LinkedListStack()
+	stack = Stack()
 
 	for element in arr:
 		stack.push(element)
+
+	# Check if stack is empty
+	print("Is Stack empty:", stack.is_empty())
 
 	# View entire stack
 	print("Stack:", stack)
@@ -88,19 +127,10 @@ if __name__ == "__main__":
 	# Peek at the top element now
 	print("Top element in the stack:", stack.peek())
 
-	# # Delete the last element
-	stack.pop()
+	# Remove top element from stack
+	popped_element = stack.pop()
 	print("Stack after deleting the top element:", stack)
-
-	# Peek at the top element now
-	print("Top element in the stack:", stack.peek())
-
-	# Get the size
-	print("Size of the stack:", stack.size())
-
-	# Add a random valueber to the stack
-	stack.push(10)
-	print("Stack after adding new element:", stack)
+	print("Popped element from stack = ", popped_element)
 
 	# Peek at the top element now
 	print("Top element in the stack:", stack.peek())
