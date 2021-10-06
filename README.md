@@ -8,14 +8,14 @@
 
 From competitive coding puzzles, data structures, algorithms to interview questions: everything in Python.
 
-## Context
+## Content
 
-### Data Structures
+### Data Structure
 
 - [Singly Linked List Implementation](data-structures/singly_linked_list.py)
 - [Stack (LIFO) Implementation](data-structures/stack.py)
 
-### Algorithms
+### Algorithm
 
 - [Linear Search Implementation](algorithms/linear_search.py)
 - [Binary Search Implementation](algorithms/binary_search.py)
@@ -28,7 +28,7 @@ From competitive coding puzzles, data structures, algorithms to interview questi
 - [03. Substring Search](interview/substring_search.py)
 - [04. Two Sum](interview/two_sum.py)
 
-## Competitive Questions
+### Hackerrank Questions
 
 - [01. ACM ICPC Team Problem](competitive-programming/acm_icpc_team.py)
 - [02. Angry Professor](competitive-programming/angry_professor.py)
