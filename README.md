@@ -10,18 +10,18 @@ From competitive coding puzzles, data structures, algorithms to interview questi
 
 ## Content
 
-### Data Structure
+### Data Structure Implementations
 
 - [Singly Linked List Implementation](data-structures/singly_linked_list.py)
 - [Stack (LIFO) Implementation](data-structures/stack.py)
 
-### Algorithm
+### Algorithm Implementations
 
 - [Linear Search Implementation](algorithms/linear_search.py)
 - [Binary Search Implementation](algorithms/binary_search.py)
 - [Insertion Sort Implementation](algorithms/insertion_sort.py)
 
-### Interview Questions
+### Coding Interview Questions
 
 - [01. Join Sorted Arrays](interview/join_sorted_arrays.py)
 - [02. Largest Ordered Span](interview/largest_inorder_span.py)
