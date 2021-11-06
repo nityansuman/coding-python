@@ -1,6 +1,5 @@
 # Coding Python
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/cea7d69eb3f54f63bef0be6d1f025638)](https://app.codacy.com/gh/nityansuman/coding-python?utm_source=github.com&utm_medium=referral&utm_content=nityansuman/coding-python&utm_campaign=Badge_Grade_Settings)
 ![GitHub LICENSE](https://img.shields.io/github/license/nityansuman/coding-python)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/nityansuman/coding-python)
 ![GitHub repo size](https://img.shields.io/github/repo-size/nityansuman/coding-python)
