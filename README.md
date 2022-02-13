@@ -1,6 +1,5 @@
 # Coding Python
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/cea7d69eb3f54f63bef0be6d1f025638)](https://app.codacy.com/gh/nityansuman/coding-python?utm_source=github.com&utm_medium=referral&utm_content=nityansuman/coding-python&utm_campaign=Badge_Grade_Settings)
 ![GitHub LICENSE](https://img.shields.io/github/license/nityansuman/coding-python)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/nityansuman/coding-python)
 ![GitHub repo size](https://img.shields.io/github/repo-size/nityansuman/coding-python)
@@ -10,25 +9,25 @@ From competitive coding puzzles, data structures, algorithms to interview questi
 
 ## Content
 
+### Algorithm Implementations
+
+- [Linear Search](algorithms/linear_search.py) - A linear search or sequential search is a method for finding an element within a list. It sequentially checks each element of the list until a match is found or the whole list has been searched.
+- [Binary Search](algorithms/binary_search.py) - Binary search, also known as half-interval search, logarithmic search, or binary chop, is a search algorithm that finds the position of a target value within a sorted array. Binary search compares the target value to the middle element of the array.
+- [Insertion Sort](algorithms/insertion_sort.py) - Insertion sort is a simple sorting algorithm that builds the final sorted array one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.
+
 ### Data Structure Implementations
 
 - [Singly Linked List Implementation](data-structures/singly_linked_list.py)
 - [Stack (LIFO) Implementation](data-structures/stack.py)
 
-### Algorithm Implementations
-
-- [Linear Search Implementation](algorithms/linear_search.py)
-- [Binary Search Implementation](algorithms/binary_search.py)
-- [Insertion Sort Implementation](algorithms/insertion_sort.py)
-
-### Coding Interview Questions
+### Interview Coding Questions
 
 - [01. Join Sorted Arrays](interview/join_sorted_arrays.py)
 - [02. Largest Ordered Span](interview/largest_inorder_span.py)
 - [03. Substring Search](interview/substring_search.py)
 - [04. Two Sum](interview/two_sum.py)
 
-### Hackerrank Questions
+### Competitive Coding Questions
 
 - [01. ACM ICPC Team Problem](competitive-programming/acm_icpc_team.py)
 - [02. Angry Professor](competitive-programming/angry_professor.py)
@@ -45,5 +44,4 @@ From competitive coding puzzles, data structures, algorithms to interview questi
 - [13. Utopian Tree](competitive-programming/utopian_tree.py)
 - [14. Word Order](competitive-programming/word_order.py)
 
-[![Forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 [![Forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
