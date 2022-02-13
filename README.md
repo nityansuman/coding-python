@@ -44,5 +44,6 @@ From competitive coding puzzles, data structures, algorithms to interview questi
 - [13. Utopian Tree](competitive-programming/utopian_tree.py)
 - [14. Word Order](competitive-programming/word_order.py)
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3a4f99a8e13940139aa32a9b74ca83cd)](https://app.codacy.com/gh/nityansuman/coding-python?utm_source=github.com&utm_medium=referral&utm_content=nityansuman/coding-python&utm_campaign=Badge_Grade_Settings)
 [![Forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 [![Forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
