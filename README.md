@@ -11,9 +11,17 @@ From competitive coding puzzles, data structures, algorithms to interview questi
 
 ### Algorithm Implementations
 
-- [Linear Search](algorithms/linear_search.py) - A linear search or sequential search is a method for finding an element within a list. It sequentially checks each element of the list until a match is found or the whole list has been searched.
-- [Binary Search](algorithms/binary_search.py) - Binary search, also known as half-interval search, logarithmic search, or binary chop, is a search algorithm that finds the position of a target value within a sorted array. Binary search compares the target value to the middle element of the array.
-- [Insertion Sort](algorithms/insertion_sort.py) - Insertion sort is a simple sorting algorithm that builds the final sorted array one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.
+- [Linear Search](algorithms/linear_search.py)
+
+A linear search or sequential search is a method for finding an element within a list. It sequentially checks each element of the list until a match is found or the whole list has been searched.
+
+- [Binary Search](algorithms/binary_search.py)
+
+Binary search, also known as half-interval search, logarithmic search, or binary chop, is a search algorithm that finds the position of a target value within a sorted array. Binary search compares the target value to the middle element of the array.
+
+- [Insertion Sort](algorithms/insertion_sort.py)
+
+Insertion sort is a simple sorting algorithm that builds the final sorted array one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.
 
 ### Data Structure Implementations
 
