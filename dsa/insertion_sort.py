@@ -1,4 +1,4 @@
-# Insertion Sort Implementation
+"""Insertion Sort Implementation"""
 
 def insertion_sort(arr, ascending=True):
 	# Raise error if array is empty

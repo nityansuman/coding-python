@@ -1,4 +1,4 @@
-# Binary Search Implementation
+"""Binary Search Implementation"""
 
 def binary_search(arr, search):
 	# Check for empty array
