@@ -2,7 +2,7 @@
 
 From competitive coding puzzles, data structures, algorithms to interview questions: everything in Python.
 
-### Data Structures and Algorithm (DSA) Implementations
+## Algorithms
 
 - [Linear Search](dsa/linear_search.py)
 
@@ -15,6 +15,8 @@ Binary search, also known as half-interval search, logarithmic search, or binary
 - [Insertion Sort](dsa/insertion_sort.py)
 
 Insertion sort is a simple sorting algorithm that builds the final sorted array one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.
+
+## Data Structures
 
 - [Singly Linked List Implementation](dsa/singly_linked_list.py)
 
@@ -29,4 +31,5 @@ A stack is an abstract data type that serves as a collection of elements, with t
 
 The order in which elements come off a stack gives rise to its alternative name, LIFO (last in, first out). Additionally, a peek operation may give access to the top without modifying the stack.
 
+[![Forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 [![Forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
