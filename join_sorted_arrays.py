@@ -16,21 +16,14 @@ Example:
 	Merged array = [6, 5, 4, 3, 2, 1]
 """
 
-
 def join_sorted_arrays(arr1, arr2, asc):
-	# Compute length of arrays
 	len1, len2 = len(arr1), len(arr2)
-
-	# Placeholder for the merged arrays
 	arr = list()
 
-	# Set starting indexes
 	idx1, idx2 = 0, 0
 
-	# Iterate over arrays untill one of them runs over
 	while idx1 < len1 and idx2 < len2:
 		if asc is True:
-			# Ascending order
 			if arr1[idx1] < arr2[idx2]:
 				arr.append(arr1[idx1])
 				idx1 += 1
@@ -42,7 +35,6 @@ def join_sorted_arrays(arr1, arr2, asc):
 				idx1 += 1
 				idx2 += 1
 		else:
-			# Descending order
 			if arr1[idx1] > arr2[idx2]:
 				arr.append(arr1[idx1])
 				idx1 += 1
@@ -54,26 +46,18 @@ def join_sorted_arrays(arr1, arr2, asc):
 				idx1 += 1
 				idx2 += 1
 
-	# Append rest of the array
 	if idx1 < len1:
 		arr.extend(arr1[idx1:])
 	else:
-		# That means, idx2 < len2
 		arr.extend(arr2[idx2:])
 
 	return arr
 
 
 if __name__ == "__main__":
-	# Read integer arrays from stdin
 	a1 = list(map(int, input().strip().split()))
 	a2 = list(map(int, input().strip().split()))
 
-	# Read ascending order flag
-	# If True, sorted in ascending order else descending order
-	# Options: `True`, `False`
 	order = eval(input().strip())
 
-	# Call method to merge arrays in same sorted order
-	merged_arr = join_sorted_arrays(a1, a2, asc=order)
-	print("Merged array:", merged_arr)
+	print("Merged array:", join_sorted_arrays(a1, a2, asc=order))
