@@ -30,3 +30,13 @@ class Solution:
 				return ""
 
 		return prefix
+
+	def longestCommonPrefix(self, strs: List[str]) -> str:
+		shortest = min(strs, key=len)
+
+		for i, char in enumerate(shortest):
+			for str in strs:
+				if str[i] != char:
+					return shortest[:i]
+
+		return shortest
