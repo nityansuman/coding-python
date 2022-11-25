@@ -1,6 +1,5 @@
 # https://leetcode.com/problems/palindrome-number/
 
-
 class Solution:
 	def isPalindrome(self, x: int) -> bool:
 		if x < 0:
@@ -20,8 +19,6 @@ class Solution:
 
 		return True
 
-
-class Solution:
-	def isPalindrome(self, x: int) -> bool:
+	def isPalindrome_opt(self, x: int) -> bool:
 		x = str(x)
 		return x == x[::-1]
