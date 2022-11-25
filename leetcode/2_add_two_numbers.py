@@ -13,19 +13,16 @@ class Solution:
 	def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
 
 		str1 = ""
-		h1 = l1
-		while h1 is not None:
-			str1 += str(h1.val)
-			h1 = h1.next
+		while l1 is not None:
+			str1 += str(l1.val)
+			l1 = l1.next
 
 		str2 = ""
-		h2 = l2
-		while h2 is not None:
-			str2 += str(h2.val)
-			h2 = h2.next
+		while l2 is not None:
+			str2 += str(l2.val)
+			l2 = l2.next
 
-		val = str(int(str1[::-1]) + int(str2[::-1]))
-		val = val[::-1]
+		val = str(int(str1[::-1]) + int(str2[::-1]))[::-1]
 
 		node = ListNode(val=val[0])
 
