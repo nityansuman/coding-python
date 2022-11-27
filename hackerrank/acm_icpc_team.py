@@ -1,11 +1,8 @@
 # Import packages
 from typing import List
 
-
 def acm_team(topic: List[str]) -> List[int]:
-	# Convert string to binary
 	topic = [int(t, 2) for t in topic]
-
 	max_topics, num_teams = 0, 0
 
 	for i in range(len(topic) - 1):
@@ -23,10 +20,8 @@ def acm_team(topic: List[str]) -> List[int]:
 
 
 if __name__ == "__main__":
-	# Read input from stdin
 	n, m = list(map(int, input().strip().split()))
 
-	# Read topic input from stdin
 	topic = list()
 	for _ in range(n):
 		topic_item = input()

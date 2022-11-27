@@ -10,4 +10,7 @@ def wrap(string: str, max_width: int) -> str:
 
 
 if __name__ == "__main__":
-	print(wrap("ABCDEFGHIJKLIMNOQRSTUVWXYZ", 4))
+	input_string = input().strip()
+	width = int(input().strip())
+
+	print(wrap(input_string, width))
