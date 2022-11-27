@@ -7,11 +7,11 @@ class Solution:
 		shuffled_arr = list()
 		i = 0
 		while i < n:
-			shuffled_arr.extend((nums[i], nums[i+1]))
+			shuffled_arr.extend((nums[i], nums[i+n]))
 			i += 1
 
 		return shuffled_arr
 
 # Note:
-# 1. Extend better than multiple appens
+# 1. Extend better than multiple appends
 # 2. List creation more expensive than tuple
