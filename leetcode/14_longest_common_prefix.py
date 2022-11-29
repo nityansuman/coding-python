@@ -31,7 +31,7 @@ class Solution:
 
 		return prefix
 
-	def longestCommonPrefix(self, strs: List[str]) -> str:
+	def longestCommonPrefixAlternate(self, strs: List[str]) -> str:
 		shortest = min(strs, key=len)
 
 		for i, char in enumerate(shortest):

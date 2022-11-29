@@ -19,6 +19,6 @@ class Solution:
 
 		return True
 
-	def isPalindromeFaster(self, x: int) -> bool:
+	def isPalindromeAlternate(self, x: int) -> bool:
 		x = str(x)
 		return x == x[::-1]

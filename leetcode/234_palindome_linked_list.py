@@ -7,6 +7,7 @@ class ListNode:
         self.val = val
         self.next = next
 
+
 class Solution:
 	def isPalindrome(self, head: Optional[ListNode]) -> bool:
 		if head.next is None:
