@@ -1,4 +1,4 @@
-"""Insertion Sort Implementation"""
+# Insertion Sort Implementation
 
 def insertion_sort(arr, ascending=True):
 	if len(arr) == 0:

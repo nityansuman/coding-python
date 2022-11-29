@@ -1,4 +1,4 @@
-"""Linear Search Implementation"""
+# Linear Search Implementation
 
 def linear_search(arr, search):
 	for _, ele in enumerate(arr):
