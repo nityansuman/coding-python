@@ -1,3 +1,5 @@
+// Python has no `Generics` concept, thus coding this solution in CPP ffor continuity
+
 #include <iostream>
 #include <vector>
 #include <string>
