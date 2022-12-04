@@ -2,6 +2,7 @@
 
 from typing import List
 
+
 class Solution:
 	def kidsWithCandies(self, candies: List[int], extra_candies: int) -> List[bool]:
 		max_candies = max(candies)
