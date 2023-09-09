@@ -9,7 +9,6 @@ class Solution:
 			return strs[0]
 
 		prefix = ""
-
 		for i in range(len(strs) - 1):
 			s1 = strs[i]
 			s2 = strs[i+1]
